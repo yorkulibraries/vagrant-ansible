@@ -13,3 +13,20 @@ vagrant up
 ```
 ansible-playbook playbook.yml
 ```
+
+# Using a specific **inventory** file
+
+The default inventory file is **.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory**. You can create your own inventory file and pass it to Ansible with the -i switch.
+
+Suppose you want to run a playbook on a group **foogroup**, you need to add the **vagrant** host to that group in the inventory file.
+
+Edit **inventory** file and add a group like below
+
+```
+[foogroup]
+vagrant
+```
+
+```
+ansible-playbook -i inventory playbook.yml --limit vagrant
+```
