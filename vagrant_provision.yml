@@ -1,0 +1,16 @@
+- name: vagrant provision
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Set the timezone to America/Toronto 
+      timezone: "name=America/Toronto"
+
+    - name: add SSH pubkeys
+      authorized_key:
+        user: "vagrant"
+        key: "{{ lookup('file', '{{ item }}') }}"
+      with_fileglob: sshkeys/*
+
+
