@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     vb.memory = "2048"
     vb.name = "vagrant-#{app}"
   end
-  config.vm.network :private_network, ip: "192.168.168.168"
+  config.vm.network :private_network, ip: "192.168.1.168"
   config.vm.provision "ansible" do |ansible| 
     ansible.playbook="vagrant_provision.yml" 
     ansible.extra_vars = {
