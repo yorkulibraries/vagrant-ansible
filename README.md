@@ -27,6 +27,8 @@ Edit **inventory** file and add a group like below
 vagrant
 ```
 
+Then run the playbook.yml with the specified **inventory** file.
+
 ```
 ansible-playbook -i inventory playbook.yml --limit vagrant
 ```
