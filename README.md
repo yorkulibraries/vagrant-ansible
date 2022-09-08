@@ -2,7 +2,7 @@
 
 Simple box to learn Ansible. This box adds your sshkeys to the *vagrant* user in the box so you don't have to do it yourself.
 
-This box will have IP address **192.168.1.168**.
+This box will have IP address **192.168.56.168**.
 
 # Get started
 
